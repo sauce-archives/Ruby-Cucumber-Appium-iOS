@@ -12,7 +12,7 @@ Before do | scenario |
       app: "#{ENV['app']}",
       deviceOrientation: 'portrait',
       name: "#{scenario.feature.name} - #{scenario.name}",
-      appiumVersion: '1.5.0',
+      appiumVersion: '1.5.3',
       browserName: ''
     }
   }
@@ -28,7 +28,7 @@ After do | scenario |
   puts "SauceOnDemandSessionID=#{sessionid} job-name=#{jobname}"
 
   @driver.driver_quit
-  
+
   if scenario.passed?
     SauceWhisk::Jobs.pass_job sessionid
   else
